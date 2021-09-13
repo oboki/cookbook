@@ -1,0 +1,9 @@
+[submodule "cookbook-api"]
+	path = cookbook-api
+	url = https://github.com/oboki/cookbook-api
+[submodule "cookbook-index"]
+	path = cookbook-index
+	url = https://github.com/oboki/cookbook-index
+[submodule "cookbook-fe"]
+	path = cookbook-fe
+	url = https://github.com/oboki/cookbook-fe
