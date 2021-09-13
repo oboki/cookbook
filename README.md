@@ -6,9 +6,7 @@
 2. Elasticsearch 기반 검색 기능 제공 API (Flask, Airflow web plugin)
 3. 프론트엔드 (vue)
 
-> metadata browser
-
-vue 2.0 × vuetify 기반의 화면을 제공합니다.
+![](./images/architecture.png)
 
 > as an airflow plugin
 
@@ -16,7 +14,14 @@ vue 2.0 × vuetify 기반의 화면을 제공합니다.
 
 > es only store
 
-별도의 저장소 없이 elasticsearch 만을 이용합니다.
+추가 저장소 없이 store & search 에 elasticsearch 만을 이용하며, 한글 형태소분석기로 [`nori`](https://www.elastic.co/guide/en/elasticsearch/plugins/master/analysis-nori-tokenizer.html) 를 사용합니다.
+
+> metadata browser
+
+vue 2.0 × vuetify 기반의 화면을 제공합니다.
+
+![](./images/cookbook-fe.png)
+
 
 ## Project setup for development
 
@@ -64,11 +69,13 @@ git clone https://github.com/oboki/cookbook-fe.git
 cd cookbook-fe
 ```
 
-`vim .env.localhost` 파일을 열어 API 경로를 로컬 환경에 맞춰 수정
+`vim .env.localhost` 파일을 열어 API 경로를 로컬 환경에 맞춰 수정한 뒤
 
 ```
 VUE_APP_API=http://172.30.81.15:8080/cookbookapi/v1
 ```
+
+다음 명령어로 의존성 설치 및 개발서버 실행
 
 ```bash
 npm install
